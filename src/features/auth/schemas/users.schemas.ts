@@ -1,6 +1,6 @@
 import { Prop, Schema } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { schemaForClass } from 'src/helpers/orm/create-schema.orm';
+import { schemaForClass } from './orm/create-schema.orm';
 import * as bcrypt from 'bcrypt';
 import { randomString } from 'src/helpers/utils/random-string';
 
