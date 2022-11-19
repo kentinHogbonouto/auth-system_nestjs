@@ -27,11 +27,8 @@ async function bootstrap() {
   // const document = SwaggerModule.createDocument(app, config, options);
   // SwaggerModule.setup('/docs', app, document);
 
-  const logger = new Logger('NestAuthServer');
-
   const port = environments.port;
-  await app.listen(port, () => {
-    logger.log(`Auth server is alive and running on ${port}`);
-  });
+
+  await app.listen(port);
 }
 bootstrap();
