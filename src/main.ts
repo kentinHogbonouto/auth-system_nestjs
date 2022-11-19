@@ -4,6 +4,7 @@ import { AppModule } from './app.module';
 import { environments } from './environments/environments';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import helmet from 'helmet';
+import { logger } from 'handlebars';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -29,6 +30,12 @@ async function bootstrap() {
 
   const port = environments.port;
 
-  await app.listen(port);
+  const logger = new Logger('NestAuth');
+
+  await app.listen(port, () => {
+    logger.log(
+      `Authentication system api is alive and running on port ${port}`,
+    );
+  });
 }
 bootstrap();
