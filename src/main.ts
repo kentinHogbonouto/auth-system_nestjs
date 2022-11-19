@@ -4,7 +4,6 @@ import { AppModule } from './app.module';
 import { environments } from './environments/environments';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import helmet from 'helmet';
-import * as compression from 'compression';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -12,7 +11,10 @@ async function bootstrap() {
   app.enableCors;
   app.enableShutdownHooks;
   app.use(helmet());
-  app.use(compression());
+
+  /**
+   * TO DO review compression package later
+   */
 
   // const options: SwaggerDocumentOptions = {
   //   operationIdFactory: (controllerKey: string, methodKey: string) => methodKey,
