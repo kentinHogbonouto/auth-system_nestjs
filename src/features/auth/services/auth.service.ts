@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { JwtService, JwtSignOptions } from '@nestjs/jwt';
 import { environments } from 'src/environments/environments';
-import { User } from 'src/schemas/users.schemas';
+import { User } from '../schemas/users.schemas';
 import { UserService } from 'src/features/users/services/users.services';
 
 export interface TokenResponse {
