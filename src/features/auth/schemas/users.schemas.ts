@@ -2,7 +2,7 @@ import { Prop, Schema } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { schemaForClass } from './orm/create-schema.orm';
 import * as bcrypt from 'bcrypt';
-import { randomString } from 'src/helpers/utils/random-string';
+import { randomString } from './helpers/utils/random-string';
 
 @Schema()
 export class User extends Document {
